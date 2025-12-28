@@ -8,7 +8,7 @@ import (
 
 const (
 	// 默认对站点的 http 请求模仿最新版 Chrome on Windows 11 x64 en-US 环境
-	DEFAULT_IMPERSONATE = "chrome131"
+	DEFAULT_IMPERSONATE = "chrome143"
 )
 
 // 对站点的 http 请求模仿真实浏览器环境。包括：
@@ -19,6 +19,36 @@ const (
 // https://scrapfly.io/web-scraping-tools/ja3-fingerprint (建议用这个 ja3).
 // https://myhttpheader.com/ (有序的 http headers，除 X-* 以外。使用 Guest profile 打开).
 var profiles = []*Profile{
+	{
+		Name:          "chrome143",
+		Navigator:     "chrome",
+		Comment:       "Chrome 143 on Windows 11 x64",
+		Ja3:           "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,23-13-27-16-51-65281-45-5-17513-0-35-43-65037-11-18-10,29-23-24,0",
+		H2fingerprint: "1:65536,2:0,4:6291456,6:262144|15663105|0|m,a,s,p",
+		Headers: [][]string{
+			{"Cache-Control", "max-age=0"},
+			{"Sec-Ch-Ua", `"Google Chrome";v="143", "Chromium";v="143", "Not A(Brand";v="24"`},
+			{"Sec-Ch-Ua-Mobile", "?0"},
+			{"Sec-Ch-Ua-Platform", `"Windows"`},
+			{"Sec-Ch-Ua-Arch", `"x86"`},
+			{"Sec-Ch-Ua-Bitness", `"64"`},
+			{"Sec-Ch-Ua-Full-Version", `"143.0.7499.147"`},
+			{"Sec-Ch-Ua-Full-Version-List", `"Google Chrome";v="143.0.7499.147", "Chromium";v="143.0.7499.147", "Not A(Brand";v="24.0.0.0"`},
+			{"Sec-Ch-Ua-Model", `""`},
+			{"Sec-Ch-Ua-Platform-Version", `"15.0.0"`},
+			{"Upgrade-Insecure-Requests", "1"},
+			{"User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"},
+			{"Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"},
+			{"Sec-Fetch-Site", "none"},
+			{"Sec-Fetch-Mode", "navigate"},
+			{"Sec-Fetch-User", "?1"},
+			{"Sec-Fetch-Dest", "document"},
+			{"Accept-Encoding", "gzip, deflate, br, zstd"},
+			{"Accept-Language", "en-US,en;q=0.9,zh-CN;q=0.8,zh-TW;q=0.7,zh-HK;q=0.6,zh;q=0.5,da;q=0.4,fr;q=0.3"},
+			{"Dnt", "1"},
+			{"Cookie", util.HTTP_HEADER_PLACEHOLDER},
+		},
+	},
 	{
 		Name:      "chrome120",
 		Navigator: "chrome",

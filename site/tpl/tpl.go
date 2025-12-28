@@ -23,6 +23,10 @@ var (
 			Url:     "https://pt.0ff.cc/",
 			Comment: "自由农场",
 		},
+		"13city": {
+			Type: "nexusphp",
+			Url:  "https://13city.org/",
+		},
 		"1ptba": {
 			Type:    "nexusphp",
 			Url:     "https://1ptba.com/",
@@ -71,6 +75,11 @@ var (
 			SelectorTorrentSnatched: `a[href^="viewsnatches"]`,
 			Comment:                 "梓喵",
 		},
+		"baozi": {
+			Type:    "nexusphp",
+			Url:     "https://p.t-baozi.cc/",
+			Comment: "包子PT",
+		},
 		"beitai": {
 			Type:    "nexusphp",
 			Url:     "https://www.beitai.pt/",
@@ -102,6 +111,12 @@ var (
 			GlobalHnR: true,
 			Comment:   "CarPT (小车站)",
 		},
+		"cangbaoge": {
+			Type:    "nexusphp",
+			Url:     "https://cangbao.ge/",
+			Comment: "藏宝阁",
+			Aliases: []string{"cbg"},
+		},
 		"chdbits": {
 			Type:               "nexusphp",
 			Aliases:            []string{"ptchdbits", "rainbowisland", "chd"},
@@ -116,6 +131,12 @@ var (
 			TorrentsExtraUrls: []string{"special.php"},
 			GlobalHnR:         true,
 			Comment:           "蟹黄堡",
+		},
+		"cspt": {
+			Type:             "nexusphp",
+			Url:              "https://cspt.top/",
+			Comment:          "财神",
+			SelectorUserInfo: `.user-info`,
 		},
 		"cyanbug": {
 			Type:    "nexusphp",
@@ -150,6 +171,11 @@ var (
 			Url:     "https://www.dragonhd.xyz/",
 			Comment: "龍之家",
 		},
+		"dubhe": {
+			Type:    "nexusphp",
+			Url:     "https://dubhe.site/",
+			Comment: "天枢",
+		},
 		"ecust": {
 			Type:              "nexusphp",
 			Aliases:           []string{"ecustpt"},
@@ -169,6 +195,7 @@ var (
 			Type:    "nexusphp",
 			Url:     "https://gainbound.net/",
 			Comment: "丐帮",
+			Dead:    true,
 		},
 		"gamegamept": {
 			Type:              "nexusphp",
@@ -228,6 +255,7 @@ var (
 			Type:    "nexusphp",
 			Url:     "https://hdatmos.club/",
 			Comment: "阿童木",
+			Dead:    true,
 		},
 		"hdclone": {
 			Type:    "nexusphp",
@@ -283,11 +311,13 @@ var (
 			Type:    "unit3d",
 			Url:     "https://pt.hdpost.top/",
 			Comment: "普斯特",
+			Dead:    true,
 		},
 		"hdpt": {
 			Type:    "nexusphp",
 			Url:     "https://hdpt.xyz/",
 			Comment: "明教",
+			Dead:    true,
 		},
 		"hdtime": {
 			Type:    "nexusphp",
@@ -302,7 +332,7 @@ var (
 		},
 		"hdvideo": {
 			Type:    "nexusphp",
-			Url:     "https://hdvideo.one/",
+			Url:     "https://hdvideo.top/",
 			Comment: "高清视频",
 		},
 		"hdzone": {
@@ -342,15 +372,21 @@ var (
 			SelectorTorrentFree:        `img.free, img.twoupfree`,
 			Comment:                    "蝴蝶",
 		},
+		"hxpt": {
+			Type:    "nexusphp",
+			Url:     "https://www.hxpt.org/",
+			Comment: "好学",
+		},
 		"icc2022": {
 			Type:    "nexusphp",
 			Aliases: []string{"icc"},
 			Url:     "https://www.icc2022.com/",
 			Comment: "冰淇淋",
+			Dead:    true,
 		},
 		"ilolicon": {
 			Type:    "nexusphp",
-			Url:     "https://share.ilolicon.com/",
+			Url:     "https://mua.xloli.cc/",
 			Comment: "ilolicon PT",
 		},
 		"itzmx": {
@@ -378,6 +414,7 @@ var (
 			Comment:                    "JPTV.club",
 			SelectorUserInfoUploaded:   ".ratio-bar .badge-user:has(.fa-arrow-up)",
 			SelectorUserInfoDownloaded: ".ratio-bar .badge-user:has(.fa-arrow-down)",
+			Dead:                       true,
 		},
 		"kamept": {
 			Type:              "nexusphp",
@@ -462,6 +499,11 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			Url:     "https://kufei.org/",
 			Comment: "库非",
 		},
+		"lajidui": {
+			Type:    "nexusphp",
+			Url:     "https://pt.lajidui.top/",
+			Comment: "垃圾堆",
+		},
 		"leaves": {
 			Type:              "nexusphp",
 			Aliases:           []string{"redleaves"},
@@ -469,6 +511,7 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			TorrentsExtraUrls: []string{"special.php", "games.php"},
 			SearchUrl:         `search.php?search=%s&search_area=0`,
 			Comment:           "红叶",
+			Dead:              true,
 		},
 		// old lemonhd
 		// "lemonhd": {
@@ -486,6 +529,22 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			Aliases: []string{"leaguehd", "lemon"},
 			Url:     "https://lemonhd.club/",
 			Comment: "柠檬(新)",
+		},
+		"longpt": {
+			Type:    "nexusphp",
+			Url:     "https://longpt.org/",
+			Comment: "LongPT",
+		},
+		"luckpt": {
+			Type:    "nexusphp",
+			Url:     "https://pt.luckpt.de/",
+			Comment: "LuckPT",
+		},
+		"march": {
+			Type:    "nexusphp",
+			Url:     "https://duckboobee.org/",
+			Aliases: []string{"duckboobee"},
+			Comment: "March",
 		},
 		"mteam": {
 			Type:                "mtorrent",
@@ -509,6 +568,16 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			Url:       "https://www.nicept.net/",
 			GlobalHnR: true,
 			Comment:   "老师",
+		},
+		"novahd": {
+			Type:    "nexusphp",
+			Url:     "https://pt.novahd.top/",
+			Comment: "NovaHD",
+		},
+		"opencd": {
+			Type:    "nexusphp",
+			Url:     "https://open.cd/",
+			Comment: "OpenCD, 皇后",
 		},
 		"okpt": {
 			Type:              "nexusphp",
@@ -546,6 +615,11 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			SearchUrl:         `search.php?search=%s&search_area=0`,
 			Comment:           "猪猪",
 		},
+		"playletpt": {
+			Type:    "nexusphp",
+			Url:     "https://playletpt.xyz/",
+			Comment: "PlayletPT",
+		},
 		"ptcafe": {
 			Type:    "nexusphp",
 			Url:     "https://ptcafe.club/",
@@ -555,11 +629,12 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			Type:    "nexusphp",
 			Url:     "https://ptchina.org/",
 			Comment: "铂金学院",
+			Dead:    true,
 		},
 		"pterclub": {
 			Type:    "nexusphp",
 			Aliases: []string{"pter"},
-			Url:     "https://pterclub.com/",
+			Url:     "https://pterclub.net/",
 			Comment: "猫站",
 		},
 		"ptsbao": {
@@ -578,6 +653,11 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			Dead:    true,
 			Comment: "",
 		},
+		"ptskit": {
+			Type:    "nexusphp",
+			Url:     "https://www.ptskit.org/",
+			Comment: "PTSKIT",
+		},
 		"pttime": {
 			Type:                           "nexusphp",
 			Aliases:                        []string{"ptt"},
@@ -595,6 +675,7 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			TorrentsExtraUrls:        []string{"special.php"},
 			SelectorUserInfoUserName: `.User_Name`,
 			Comment:                  "象站",
+			Dead:                     true,
 		},
 		"ptzone": {
 			Type:    "nexusphp",
@@ -619,6 +700,12 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			Url:     "https://www.qingwapt.com/",
 			Comment: "青蛙",
 		},
+		"railgunpt": {
+			Type:    "nexusphp",
+			Url:     "https://bilibili.download/",
+			Aliases: []string{"bilibili"},
+			Comment: "RailgunPT",
+		},
 		"raingfh": {
 			Type:    "nexusphp",
 			Url:     "https://raingfh.top/",
@@ -640,11 +727,22 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			SelectorTorrentNeutral: `.s-tag-neutral`,
 			Comment:                "鲨鱼",
 		},
+		"siqi": {
+			Type:    "nexusphp",
+			Url:     "https://si-qi.xyz/",
+			Comment: "思齐",
+		},
 		"skyeysnow": {
 			Type:    "discuz",
 			Url:     "https://skyeysnow.com/",
 			Domains: []string{"skyey.win", "skyey2.com"},
 			Comment: "天雪",
+		},
+		"springsunday": {
+			Type:    "nexusphp",
+			Url:     "https://springsunday.net/",
+			Aliases: []string{"ssd"},
+			Comment: "SSD, 春天",
 		},
 		"soulvoice": {
 			Type:    "nexusphp",
@@ -663,6 +761,11 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			Url:               "https://pt.eastgame.org/",
 			TorrentsExtraUrls: []string{"trls.php"},
 			Comment:           "吐鲁番",
+		},
+		"tmpt": {
+			Type:    "nexusphp",
+			Url:     "https://tmpt.top/",
+			Comment: "唐门",
 		},
 		"tosky": {
 			Type:    "nexusphp",
@@ -739,6 +842,11 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			Url:     "https://wukongwendao.top/",
 			Comment: "悟空问道",
 		},
+		"xingyunge": {
+			Type:    "nexusphp",
+			Url:     "https://pt.xingyungept.org/",
+			Comment: "星陨阁",
+		},
 		"xingtan": {
 			Type:    "nexusphp",
 			Aliases: []string{"xinglin"},
@@ -755,6 +863,11 @@ https://www.dmm.co.jp/dc/doujin/-/detail/=/cid={{number | regex_search("\\bd_\\d
 			Type:    "nexusphp",
 			Url:     "https://zmpt.cc/",
 			Comment: "织梦",
+		},
+		"zrpt": {
+			Type:    "nexusphp",
+			Url:     "https://zrpt.cc/",
+			Comment: "自然",
 		},
 	}
 	SITENAMES = []string{} // all internal site (canonical) names in lexical order.

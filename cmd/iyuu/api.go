@@ -76,7 +76,7 @@ type IyuuApiHashResponse struct {
 
 type IyuuTorrentInfoHash struct {
 	Sid        int64  `json:"sid"`
-	Torrent_id int64  `json:"torrent_id"`
+	Torrent_id any    `json:"torrent_id"` // 2025-12 test: 新版 iyuu 这个字段是 int | string
 	Info_hash  string `json:"info_hash"`
 }
 
@@ -108,6 +108,8 @@ func IyuuApiHash(token string, infoHashes []string, sid_sha1 string) (map[string
 	resData := &IyuuApiHashResponse{}
 	err := util.PostUrlForJson(apiUrl, data, &resData, header, nil)
 	log.Tracef("ApiInfoHash response err=%v", err)
+	// iyuu returns `{"code":404,"data":[],"msg":"未查询到可辅种数据"}` if no xseed found.
+	// which fails to unmarshal. For now, ignore this error.
 	if err != nil {
 		return nil, err
 	}

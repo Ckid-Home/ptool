@@ -124,6 +124,7 @@ type ClientConfigStruct struct {
 	BrushDefaultUploadSpeedLimitValue int64 ``
 	QbittorrentNoLogin                bool  `yaml:"qbittorrentNoLogin"`  // if set, will NOT send login request
 	QbittorrentNoLogout               bool  `yaml:"qbittorrentNoLogout"` // if set, will NOT send logout request
+	QbittorrentV4                     bool  `yaml:"qbittorrentV4"`       // is qbittorrent v4 (legacy) version.
 }
 
 type SiteConfigStruct struct {

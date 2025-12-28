@@ -453,10 +453,11 @@ func updateIyuuDatabase(token string, allInfoHashes []string) error {
 					})
 					tx.Where("info_hash in ?", infoHashes).Delete(&iyuu.Torrent{})
 					iyuuTorrents := util.Map(iyuuRecords, func(iyuuRecord iyuu.IyuuTorrentInfoHash) iyuu.Torrent {
+						torrentId := util.ParseInt(fmt.Sprint(iyuuRecord.Torrent_id))
 						return iyuu.Torrent{
 							InfoHash:       iyuuRecord.Info_hash,
 							Sid:            iyuuRecord.Sid,
-							Tid:            iyuuRecord.Torrent_id,
+							Tid:            torrentId,
 							TargetInfoHash: targetInfoHash,
 						}
 					})

@@ -241,7 +241,10 @@ func (qbclient *Client) PauseTorrents(infoHashes []string) error {
 	data := url.Values{
 		"hashes": {strings.Join(infoHashes, "|")},
 	}
-	return qbclient.apiPost("api/v2/torrents/pause", data)
+	if qbclient.ClientConfig.QbittorrentV4 {
+		return qbclient.apiPost("api/v2/torrents/pause", data)
+	}
+	return qbclient.apiPost("api/v2/torrents/stop", data)
 }
 
 func (qbclient *Client) ResumeTorrents(infoHashes []string) error {
@@ -255,7 +258,10 @@ func (qbclient *Client) ResumeTorrents(infoHashes []string) error {
 	data := url.Values{
 		"hashes": {strings.Join(infoHashes, "|")},
 	}
-	return qbclient.apiPost("api/v2/torrents/resume", data)
+	if qbclient.ClientConfig.QbittorrentV4 {
+		return qbclient.apiPost("api/v2/torrents/resume", data)
+	}
+	return qbclient.apiPost("api/v2/torrents/start", data)
 }
 
 func (qbclient *Client) RecheckTorrents(infoHashes []string) error {
